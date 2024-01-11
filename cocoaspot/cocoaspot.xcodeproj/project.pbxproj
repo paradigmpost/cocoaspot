@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BC8E2AC32B4FBE6F00B2053B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8E2AC22B4FBE6F00B2053B /* AppDelegate.m */; };
+		BC8E2AC52B4FBE7000B2053B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC8E2AC42B4FBE7000B2053B /* Assets.xcassets */; };
+		BC8E2AC82B4FBE7000B2053B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8E2AC62B4FBE7000B2053B /* MainMenu.xib */; };
+		BC8E2ACA2B4FBE7000B2053B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8E2AC92B4FBE7000B2053B /* main.m */; };
+		BC8E2AD52B4FBE7100B2053B /* cocoaspotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8E2AD42B4FBE7100B2053B /* cocoaspotTests.m */; };
+		BC8E2ADF2B4FBE7100B2053B /* cocoaspotUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8E2ADE2B4FBE7100B2053B /* cocoaspotUITests.m */; };
+		BC8E2AE12B4FBE7100B2053B /* cocoaspotUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8E2AE02B4FBE7100B2053B /* cocoaspotUITestsLaunchTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC8E2AD12B4FBE7100B2053B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC8E2AB62B4FBE6F00B2053B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC8E2ABD2B4FBE6F00B2053B;
+			remoteInfo = cocoaspot;
+		};
+		BC8E2ADB2B4FBE7100B2053B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC8E2AB62B4FBE6F00B2053B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC8E2ABD2B4FBE6F00B2053B;
+			remoteInfo = cocoaspot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BC8E2ABE2B4FBE6F00B2053B /* cocoaspot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cocoaspot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC8E2AC12B4FBE6F00B2053B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BC8E2AC22B4FBE6F00B2053B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BC8E2AC42B4FBE7000B2053B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC8E2AC72B4FBE7000B2053B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BC8E2AC92B4FBE7000B2053B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BC8E2ACB2B4FBE7000B2053B /* cocoaspot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cocoaspot.entitlements; sourceTree = "<group>"; };
+		BC8E2AD02B4FBE7100B2053B /* cocoaspotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cocoaspotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC8E2AD42B4FBE7100B2053B /* cocoaspotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cocoaspotTests.m; sourceTree = "<group>"; };
+		BC8E2ADA2B4FBE7100B2053B /* cocoaspotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cocoaspotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC8E2ADE2B4FBE7100B2053B /* cocoaspotUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cocoaspotUITests.m; sourceTree = "<group>"; };
+		BC8E2AE02B4FBE7100B2053B /* cocoaspotUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cocoaspotUITestsLaunchTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC8E2ABB2B4FBE6F00B2053B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8E2ACD2B4FBE7100B2053B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8E2AD72B4FBE7100B2053B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC8E2AB52B4FBE6F00B2053B = {
+			isa = PBXGroup;
+			children = (
+				BC8E2AC02B4FBE6F00B2053B /* cocoaspot */,
+				BC8E2AD32B4FBE7100B2053B /* cocoaspotTests */,
+				BC8E2ADD2B4FBE7100B2053B /* cocoaspotUITests */,
+				BC8E2ABF2B4FBE6F00B2053B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC8E2ABF2B4FBE6F00B2053B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC8E2ABE2B4FBE6F00B2053B /* cocoaspot.app */,
+				BC8E2AD02B4FBE7100B2053B /* cocoaspotTests.xctest */,
+				BC8E2ADA2B4FBE7100B2053B /* cocoaspotUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC8E2AC02B4FBE6F00B2053B /* cocoaspot */ = {
+			isa = PBXGroup;
+			children = (
+				BC8E2AC12B4FBE6F00B2053B /* AppDelegate.h */,
+				BC8E2AC22B4FBE6F00B2053B /* AppDelegate.m */,
+				BC8E2AC42B4FBE7000B2053B /* Assets.xcassets */,
+				BC8E2AC62B4FBE7000B2053B /* MainMenu.xib */,
+				BC8E2AC92B4FBE7000B2053B /* main.m */,
+				BC8E2ACB2B4FBE7000B2053B /* cocoaspot.entitlements */,
+			);
+			path = cocoaspot;
+			sourceTree = "<group>";
+		};
+		BC8E2AD32B4FBE7100B2053B /* cocoaspotTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC8E2AD42B4FBE7100B2053B /* cocoaspotTests.m */,
+			);
+			path = cocoaspotTests;
+			sourceTree = "<group>";
+		};
+		BC8E2ADD2B4FBE7100B2053B /* cocoaspotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BC8E2ADE2B4FBE7100B2053B /* cocoaspotUITests.m */,
+				BC8E2AE02B4FBE7100B2053B /* cocoaspotUITestsLaunchTests.m */,
+			);
+			path = cocoaspotUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC8E2ABD2B4FBE6F00B2053B /* cocoaspot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC8E2AE42B4FBE7100B2053B /* Build configuration list for PBXNativeTarget "cocoaspot" */;
+			buildPhases = (
+				BC8E2ABA2B4FBE6F00B2053B /* Sources */,
+				BC8E2ABB2B4FBE6F00B2053B /* Frameworks */,
+				BC8E2ABC2B4FBE6F00B2053B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cocoaspot;
+			productName = cocoaspot;
+			productReference = BC8E2ABE2B4FBE6F00B2053B /* cocoaspot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BC8E2ACF2B4FBE7100B2053B /* cocoaspotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC8E2AE72B4FBE7100B2053B /* Build configuration list for PBXNativeTarget "cocoaspotTests" */;
+			buildPhases = (
+				BC8E2ACC2B4FBE7100B2053B /* Sources */,
+				BC8E2ACD2B4FBE7100B2053B /* Frameworks */,
+				BC8E2ACE2B4FBE7100B2053B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC8E2AD22B4FBE7100B2053B /* PBXTargetDependency */,
+			);
+			name = cocoaspotTests;
+			productName = cocoaspotTests;
+			productReference = BC8E2AD02B4FBE7100B2053B /* cocoaspotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BC8E2AD92B4FBE7100B2053B /* cocoaspotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC8E2AEA2B4FBE7100B2053B /* Build configuration list for PBXNativeTarget "cocoaspotUITests" */;
+			buildPhases = (
+				BC8E2AD62B4FBE7100B2053B /* Sources */,
+				BC8E2AD72B4FBE7100B2053B /* Frameworks */,
+				BC8E2AD82B4FBE7100B2053B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC8E2ADC2B4FBE7100B2053B /* PBXTargetDependency */,
+			);
+			name = cocoaspotUITests;
+			productName = cocoaspotUITests;
+			productReference = BC8E2ADA2B4FBE7100B2053B /* cocoaspotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC8E2AB62B4FBE6F00B2053B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					BC8E2ABD2B4FBE6F00B2053B = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					BC8E2ACF2B4FBE7100B2053B = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = BC8E2ABD2B4FBE6F00B2053B;
+					};
+					BC8E2AD92B4FBE7100B2053B = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = BC8E2ABD2B4FBE6F00B2053B;
+					};
+				};
+			};
+			buildConfigurationList = BC8E2AB92B4FBE6F00B2053B /* Build configuration list for PBXProject "cocoaspot" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC8E2AB52B4FBE6F00B2053B;
+			productRefGroup = BC8E2ABF2B4FBE6F00B2053B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC8E2ABD2B4FBE6F00B2053B /* cocoaspot */,
+				BC8E2ACF2B4FBE7100B2053B /* cocoaspotTests */,
+				BC8E2AD92B4FBE7100B2053B /* cocoaspotUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC8E2ABC2B4FBE6F00B2053B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC8E2AC52B4FBE7000B2053B /* Assets.xcassets in Resources */,
+				BC8E2AC82B4FBE7000B2053B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8E2ACE2B4FBE7100B2053B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8E2AD82B4FBE7100B2053B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC8E2ABA2B4FBE6F00B2053B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC8E2ACA2B4FBE7000B2053B /* main.m in Sources */,
+				BC8E2AC32B4FBE6F00B2053B /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8E2ACC2B4FBE7100B2053B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC8E2AD52B4FBE7100B2053B /* cocoaspotTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8E2AD62B4FBE7100B2053B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC8E2AE12B4FBE7100B2053B /* cocoaspotUITestsLaunchTests.m in Sources */,
+				BC8E2ADF2B4FBE7100B2053B /* cocoaspotUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC8E2AD22B4FBE7100B2053B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC8E2ABD2B4FBE6F00B2053B /* cocoaspot */;
+			targetProxy = BC8E2AD12B4FBE7100B2053B /* PBXContainerItemProxy */;
+		};
+		BC8E2ADC2B4FBE7100B2053B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC8E2ABD2B4FBE6F00B2053B /* cocoaspot */;
+			targetProxy = BC8E2ADB2B4FBE7100B2053B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BC8E2AC62B4FBE7000B2053B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC8E2AC72B4FBE7000B2053B /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC8E2AE22B4FBE7100B2053B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BC8E2AE32B4FBE7100B2053B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BC8E2AE52B4FBE7100B2053B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = cocoaspot/cocoaspot.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paradigmpost.cocoaspot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		BC8E2AE62B4FBE7100B2053B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = cocoaspot/cocoaspot.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paradigmpost.cocoaspot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		BC8E2AE82B4FBE7100B2053B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paradigmpost.cocoaspotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cocoaspot.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cocoaspot";
+			};
+			name = Debug;
+		};
+		BC8E2AE92B4FBE7100B2053B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paradigmpost.cocoaspotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cocoaspot.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cocoaspot";
+			};
+			name = Release;
+		};
+		BC8E2AEB2B4FBE7100B2053B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paradigmpost.cocoaspotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_TARGET_NAME = cocoaspot;
+			};
+			name = Debug;
+		};
+		BC8E2AEC2B4FBE7100B2053B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paradigmpost.cocoaspotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_TARGET_NAME = cocoaspot;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC8E2AB92B4FBE6F00B2053B /* Build configuration list for PBXProject "cocoaspot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC8E2AE22B4FBE7100B2053B /* Debug */,
+				BC8E2AE32B4FBE7100B2053B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC8E2AE42B4FBE7100B2053B /* Build configuration list for PBXNativeTarget "cocoaspot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC8E2AE52B4FBE7100B2053B /* Debug */,
+				BC8E2AE62B4FBE7100B2053B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC8E2AE72B4FBE7100B2053B /* Build configuration list for PBXNativeTarget "cocoaspotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC8E2AE82B4FBE7100B2053B /* Debug */,
+				BC8E2AE92B4FBE7100B2053B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC8E2AEA2B4FBE7100B2053B /* Build configuration list for PBXNativeTarget "cocoaspotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC8E2AEB2B4FBE7100B2053B /* Debug */,
+				BC8E2AEC2B4FBE7100B2053B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC8E2AB62B4FBE6F00B2053B /* Project object */;
+}
