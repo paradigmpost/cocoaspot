@@ -21,7 +21,9 @@
         </customObject>
         <customObject id="2i3-IY-jU0" customClass="AppController">
             <connections>
+                <outlet property="noPlayerView" destination="1wk-yC-m5f" id="A4M-hz-ahf"/>
                 <outlet property="password" destination="2Pm-1b-GmJ" id="Dja-u3-E3n"/>
+                <outlet property="playerView" destination="Y0B-XG-bLk" id="PAk-Oj-ynd"/>
                 <outlet property="toggleButton" destination="HMK-l7-feA" id="v1X-oG-Qt2"/>
                 <outlet property="trackId" destination="fFD-po-MBS" id="GvW-aV-xGc"/>
                 <outlet property="username" destination="PfL-9B-u1b" id="NrG-9k-TNt"/>
@@ -693,70 +695,93 @@
         <window title="cocoaspot" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="186"/>
+            <rect key="contentRect" x="335" y="390" width="480" height="221"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1800" height="1100"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="186"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="221"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField focusRingType="none" verticalHuggingPriority="750" contentType="email" translatesAutoresizingMaskIntoConstraints="NO" id="PfL-9B-u1b">
-                        <rect key="frame" x="20" y="145" width="440" height="21"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Email" drawsBackground="YES" id="mWv-X4-dGG">
-                            <font key="font" usesAppearanceFont="YES"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <accessibility description="Spotify Email"/>
-                    </textField>
-                    <textField focusRingType="none" verticalHuggingPriority="750" contentType="password" translatesAutoresizingMaskIntoConstraints="NO" id="2Pm-1b-GmJ" customClass="NSSecureTextField">
-                        <rect key="frame" x="20" y="114" width="440" height="21"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" id="WuM-gW-ULS">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <accessibility description="Spotify Password"/>
-                    </textField>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HMK-l7-feA">
-                        <rect key="frame" x="210" y="13" width="60" height="32"/>
-                        <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eHc-eW-FmH">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="play:" target="2i3-IY-jU0" id="RiB-OZ-JfW"/>
-                        </connections>
-                    </button>
-                    <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fFD-po-MBS">
-                        <rect key="frame" x="20" y="83" width="440" height="21"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Spotify Track ID" drawsBackground="YES" id="bAw-cI-3xW">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
+                    <customView hidden="YES" id="Y0B-XG-bLk" userLabel="Player View">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="221"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fFD-po-MBS">
+                                <rect key="frame" x="20" y="180" width="440" height="21"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Spotify Track ID" drawsBackground="YES" id="bAw-cI-3xW">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HMK-l7-feA">
+                                <rect key="frame" x="210" y="13" width="60" height="32"/>
+                                <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eHc-eW-FmH">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="play:" target="2i3-IY-jU0" id="RiB-OZ-JfW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fFD-po-MBS" secondAttribute="trailing" constant="20" symbolic="YES" id="7ov-qo-n5B"/>
+                            <constraint firstItem="fFD-po-MBS" firstAttribute="leading" secondItem="Y0B-XG-bLk" secondAttribute="leading" constant="20" symbolic="YES" id="VeS-md-NIu"/>
+                            <constraint firstItem="fFD-po-MBS" firstAttribute="top" secondItem="Y0B-XG-bLk" secondAttribute="top" constant="20" symbolic="YES" id="X2B-3o-gbd"/>
+                            <constraint firstItem="HMK-l7-feA" firstAttribute="centerX" secondItem="Y0B-XG-bLk" secondAttribute="centerX" id="gxO-bG-5cG"/>
+                            <constraint firstAttribute="bottom" secondItem="HMK-l7-feA" secondAttribute="bottom" constant="20" symbolic="YES" id="tn6-C9-qfB"/>
+                        </constraints>
+                    </customView>
+                    <customView id="1wk-yC-m5f" userLabel="No Player View">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="221"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField focusRingType="none" verticalHuggingPriority="750" contentType="email" translatesAutoresizingMaskIntoConstraints="NO" id="PfL-9B-u1b">
+                                <rect key="frame" x="20" y="180" width="440" height="21"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Email" drawsBackground="YES" id="mWv-X4-dGG">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <accessibility description="Spotify Email"/>
+                            </textField>
+                            <textField focusRingType="none" verticalHuggingPriority="750" contentType="password" translatesAutoresizingMaskIntoConstraints="NO" id="2Pm-1b-GmJ" customClass="NSSecureTextField">
+                                <rect key="frame" x="20" y="149" width="440" height="21"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" id="WuM-gW-ULS">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <accessibility description="Spotify Password"/>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BZS-nv-X4r">
+                                <rect key="frame" x="205" y="13" width="71" height="32"/>
+                                <buttonCell key="cell" type="push" title="Log In" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Cmn-yM-dEq">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="logIn:" target="2i3-IY-jU0" id="U1Z-EW-scQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="2Pm-1b-GmJ" firstAttribute="top" secondItem="PfL-9B-u1b" secondAttribute="bottom" constant="10" symbolic="YES" id="0Mk-Ck-w2a"/>
+                            <constraint firstAttribute="trailing" secondItem="2Pm-1b-GmJ" secondAttribute="trailing" constant="20" symbolic="YES" id="1eJ-Tj-RCD"/>
+                            <constraint firstItem="PfL-9B-u1b" firstAttribute="top" secondItem="1wk-yC-m5f" secondAttribute="top" constant="20" symbolic="YES" id="4az-fh-KUA"/>
+                            <constraint firstItem="2Pm-1b-GmJ" firstAttribute="leading" secondItem="1wk-yC-m5f" secondAttribute="leading" constant="20" symbolic="YES" id="5p6-bC-c3F"/>
+                            <constraint firstItem="BZS-nv-X4r" firstAttribute="centerX" secondItem="1wk-yC-m5f" secondAttribute="centerX" id="7Dh-EU-0IF"/>
+                            <constraint firstItem="PfL-9B-u1b" firstAttribute="leading" secondItem="1wk-yC-m5f" secondAttribute="leading" constant="20" symbolic="YES" id="a2X-KC-fhv"/>
+                            <constraint firstAttribute="trailing" secondItem="PfL-9B-u1b" secondAttribute="trailing" constant="20" symbolic="YES" id="fhR-cm-Bru"/>
+                            <constraint firstAttribute="bottom" secondItem="BZS-nv-X4r" secondAttribute="bottom" constant="20" symbolic="YES" id="wUl-JQ-dyb"/>
+                        </constraints>
+                    </customView>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="fFD-po-MBS" firstAttribute="top" secondItem="2Pm-1b-GmJ" secondAttribute="bottom" constant="10" symbolic="YES" id="04D-Ci-frE"/>
-                    <constraint firstItem="2Pm-1b-GmJ" firstAttribute="top" secondItem="PfL-9B-u1b" secondAttribute="bottom" constant="10" symbolic="YES" id="2Wd-bZ-cUW"/>
-                    <constraint firstAttribute="trailing" secondItem="PfL-9B-u1b" secondAttribute="trailing" constant="20" symbolic="YES" id="53G-53-qcG"/>
-                    <constraint firstItem="fFD-po-MBS" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="67L-fT-t2w"/>
-                    <constraint firstItem="PfL-9B-u1b" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="CJa-ev-XyN"/>
-                    <constraint firstItem="2Pm-1b-GmJ" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="D1i-hM-f9i"/>
-                    <constraint firstAttribute="bottom" secondItem="HMK-l7-feA" secondAttribute="bottom" constant="20" symbolic="YES" id="E9i-S3-oaw"/>
-                    <constraint firstItem="HMK-l7-feA" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="FZr-8t-uUg"/>
-                    <constraint firstItem="PfL-9B-u1b" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="HsH-nn-lOG"/>
-                    <constraint firstAttribute="trailing" secondItem="2Pm-1b-GmJ" secondAttribute="trailing" constant="20" symbolic="YES" id="SFT-c9-MCz"/>
-                    <constraint firstItem="PfL-9B-u1b" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="VWV-bs-iEl"/>
-                    <constraint firstItem="PfL-9B-u1b" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="icc-2F-620"/>
-                    <constraint firstAttribute="trailing" secondItem="PfL-9B-u1b" secondAttribute="trailing" constant="20" symbolic="YES" id="lJr-XE-FPs"/>
-                    <constraint firstAttribute="trailing" secondItem="fFD-po-MBS" secondAttribute="trailing" constant="20" symbolic="YES" id="tHv-yD-KPJ"/>
-                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="Voe-Tx-rLC" id="top-28-M4D"/>
             </connections>
-            <point key="canvasLocation" x="200" y="313"/>
+            <point key="canvasLocation" x="200" y="330.5"/>
         </window>
     </objects>
 </document>

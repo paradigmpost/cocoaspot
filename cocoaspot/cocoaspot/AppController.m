@@ -11,7 +11,7 @@
 
 #import "clibrespot.h"
 
-@interface AppController (Private)
+@interface AppController (PrivateListeners)
 
 - (void)isTrackLoadedChanged:(BOOL)is_track_loaded;
 - (void)isPlayingChanged:(BOOL)is_playing;
@@ -43,6 +43,84 @@ void is_playing_listener(bool is_playing, void *context) {
     ViewModel *view_model;
     BOOL is_track_loaded;
     BOOL is_playing;
+}
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        player_queue = dispatch_queue_create("player", &_dispatch_queue_attr_concurrent);
+        self->is_track_loaded = NO;
+        self->is_playing = NO;
+        
+        dispatch_sync(player_queue, ^{
+            ViewModel *view_model = spot_init_view_model();
+
+            spot_listen_for_events(
+                view_model,
+                (__bridge void *)(self),
+                is_track_loaded_listener,
+                is_playing_listener
+            );
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self->view_model = view_model;
+            });
+        });
+    }
+    return self;
+}
+
+#pragma mark - No Player View
+
+- (IBAction)logIn:(NSButton *)sender {
+    char *user = malloc(100);
+    [[self username].stringValue getCString:user maxLength:100 encoding:NSUTF8StringEncoding];
+    
+    char *pass = malloc(100);
+    [[self password].stringValue getCString:pass maxLength:100 encoding:NSUTF8StringEncoding];
+    
+    dispatch_async(player_queue, ^{
+        bool success = spot_login(self->view_model, user, pass);
+        
+        // TODO: necessary to free on the same thread?
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            free(user);
+            free(pass);
+            
+            if (!success) {
+                [self showError:@"Player failed to initialize, likely due to bad credentials. Try again."];
+                return;
+            }
+            
+            [self noPlayerView].hidden = true;
+            [self playerView].hidden = false;
+        });
+    });
+}
+
+#pragma mark - Player View
+
+- (IBAction)play:(NSButton *)sender {
+    if (self->is_playing) {
+        [self pause];
+        return;
+    }
+    
+    if (self->is_track_loaded) {
+        [self resume];
+        return;
+    }
+    
+    char *trackId = malloc(100);
+    [[self trackId].stringValue getCString:trackId maxLength:100 encoding:NSUTF8StringEncoding];
+
+    dispatch_async(player_queue, ^{
+        spot_play(self->view_model, trackId);
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            free(trackId);
+        });
+    });
 }
 
 - (void)isTrackLoadedChanged:(BOOL)is_track_loaded {
@@ -79,77 +157,6 @@ void is_playing_listener(bool is_playing, void *context) {
     }
 }
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        player_queue = dispatch_queue_create("player", &_dispatch_queue_attr_concurrent);
-        self->is_track_loaded = NO;
-        self->is_playing = NO;
-        
-        dispatch_sync(player_queue, ^{
-            ViewModel *view_model = spot_init_view_model();
-
-            spot_listen_for_events(
-                view_model,
-                (__bridge void *)(self),
-                is_track_loaded_listener,
-                is_playing_listener
-            );
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self->view_model = view_model;
-            });
-        });
-    }
-    return self;
-}
-
-- (IBAction)play:(NSButton *)sender {
-    if (self->is_playing) {
-        [self pause];
-        return;
-    }
-    
-    if (self->is_track_loaded) {
-        [self resume];
-        return;
-    }
-    
-    char *user = malloc(100);
-    [[self username].stringValue getCString:user maxLength:100 encoding:NSUTF8StringEncoding];
-    
-    char *pass = malloc(100);
-    [[self password].stringValue getCString:pass maxLength:100 encoding:NSUTF8StringEncoding];
-    
-    char *trackId = malloc(100);
-    [[self trackId].stringValue getCString:trackId maxLength:100 encoding:NSUTF8StringEncoding];
-
-    
-    dispatch_async(player_queue, ^{
-        spot_login(self->view_model, user, pass);
-        
-        // TODO: necessary to free on the same thread?
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            free(user);
-            free(pass);
-        });
-        
-//        if (!self->player) {
-//            [self showError:@"Player failed to initialize, likely due to bad credentials. Try again."];
-//            return;
-//        }
-        
-        NSLog(@"pre: spot_play");
-        
-        spot_play(self->view_model, trackId);
-        
-        NSLog(@"test...");
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            free(trackId);
-        });
-    });
-}
-
 - (void)pause {
     dispatch_async(player_queue, ^{
         spot_pause(self->view_model);
@@ -162,7 +169,7 @@ void is_playing_listener(bool is_playing, void *context) {
     });
 }
 
-#pragma mark - helpers
+#pragma mark - Helpers
 
 - (void)showError:(NSString *)message {
     NSAlert *alert = [[NSAlert alloc] init];

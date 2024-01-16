@@ -11,12 +11,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AppController : NSObject
 
-@property (strong) IBOutlet NSTextField *username;
-@property (strong) IBOutlet NSTextField *password;
-@property (strong) IBOutlet NSTextField *trackId;
-@property (strong) IBOutlet NSButton *toggleButton;
+#pragma mark - No Player View
 
-- (IBAction) play:(NSButton *)sender;
+@property (weak) IBOutlet NSView *noPlayerView;
+@property (weak) IBOutlet NSTextField *username;
+@property (weak) IBOutlet NSTextField *password;
+
+- (IBAction)logIn:(NSButton *)sender;
+
+#pragma mark - Player View
+
+@property (weak) IBOutlet NSView *playerView;
+@property (weak) IBOutlet NSTextField *trackId;
+@property (weak) IBOutlet NSButton *toggleButton;
+
+- (IBAction)play:(NSButton *)sender;
+
 
 @end
 
