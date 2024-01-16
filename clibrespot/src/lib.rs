@@ -19,8 +19,8 @@ pub unsafe extern "C" fn spot_login(
     view_model: *mut ViewModel,
     user: *const c_char,
     pass: *const c_char,
-) {
-    null_pointer_check!(view_model);
+) -> bool {
+    null_pointer_check!(view_model, false);
 
     let user = CStr::from_ptr(user).to_str().unwrap_unchecked();
     let pass = CStr::from_ptr(pass).to_str().unwrap_unchecked();

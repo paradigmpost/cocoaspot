@@ -7,7 +7,7 @@ typedef struct ViewModel ViewModel;
 
 struct ViewModel *spot_init_view_model(void);
 
-void spot_login(struct ViewModel *view_model, const char *user, const char *pass);
+bool spot_login(struct ViewModel *view_model, const char *user, const char *pass);
 
 void spot_play(struct ViewModel *view_model, const char *track_id);
 

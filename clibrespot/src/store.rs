@@ -167,23 +167,27 @@ pub fn create_view_model() -> ViewModel {
 }
 
 impl ViewModel {
-    pub fn create_player(&'static self, user: &str, pass: &str) {
-        self.runtime.block_on(self._create_player(user, pass));
-        self.runtime.spawn(self._handle_player_events());
+    pub fn create_player(&'static self, user: &str, pass: &str) -> bool {
+        let success = self.runtime.block_on(self._create_player(user, pass));
+
+        if success {
+            self.runtime.spawn(self._handle_player_events());
+        }
+
+        success
     }
 
-    async fn _create_player(&self, user: &str, pass: &str) {
-        let Some(player) = player::create(user, pass).await else { return; };
+    async fn _create_player(&self, user: &str, pass: &str) -> bool {
+        let Some(player) = player::create(user, pass).await else { return false };
 
         let action = Action::Created { player };
         self.state.lock().await.handle(action);
+
+        true
     }
 
     async fn _handle_player_events(&self) {
-        let Some(mut channel) = self.state.lock().await.get_player_event_channel() else {
-            println!("failed to listen to player events, did the player fail to initialize?");
-            return
-        };
+        let mut channel = self.state.lock().await.get_player_event_channel().unwrap();
 
         while let Some(event) = channel.recv().await {
             match event {
