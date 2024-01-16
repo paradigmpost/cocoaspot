@@ -6,16 +6,19 @@
 //
 
 #import "AppDelegate.h"
+#import "AppController.h"
 
 @interface AppDelegate ()
 
 @property (strong) IBOutlet NSWindow *window;
+@property (strong) IBOutlet AppController *controller;
+
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+    
 }
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC6429532B5105750092E093 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6429522B5105750092E093 /* AppController.m */; };
 		BC8E2AC32B4FBE6F00B2053B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8E2AC22B4FBE6F00B2053B /* AppDelegate.m */; };
 		BC8E2AC52B4FBE7000B2053B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC8E2AC42B4FBE7000B2053B /* Assets.xcassets */; };
 		BC8E2AC82B4FBE7000B2053B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8E2AC62B4FBE7000B2053B /* MainMenu.xib */; };
@@ -14,6 +15,9 @@
 		BC8E2AD52B4FBE7100B2053B /* cocoaspotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8E2AD42B4FBE7100B2053B /* cocoaspotTests.m */; };
 		BC8E2ADF2B4FBE7100B2053B /* cocoaspotUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8E2ADE2B4FBE7100B2053B /* cocoaspotUITests.m */; };
 		BC8E2AE12B4FBE7100B2053B /* cocoaspotUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8E2AE02B4FBE7100B2053B /* cocoaspotUITestsLaunchTests.m */; };
+		BC8E2AF22B4FEA6F00B2053B /* libclibrespot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8E2AF12B4FEA6F00B2053B /* libclibrespot.a */; };
+		BC8E2AF42B4FEB5800B2053B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8E2AF32B4FEB5800B2053B /* CoreAudio.framework */; };
+		BC8E2AF62B4FEC7400B2053B /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8E2AF52B4FEC7400B2053B /* AudioUnit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC6429512B5105750092E093 /* AppController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		BC6429522B5105750092E093 /* AppController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		BC8E2ABE2B4FBE6F00B2053B /* cocoaspot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cocoaspot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC8E2AC12B4FBE6F00B2053B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC8E2AC22B4FBE6F00B2053B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -46,6 +52,11 @@
 		BC8E2ADA2B4FBE7100B2053B /* cocoaspotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cocoaspotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC8E2ADE2B4FBE7100B2053B /* cocoaspotUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cocoaspotUITests.m; sourceTree = "<group>"; };
 		BC8E2AE02B4FBE7100B2053B /* cocoaspotUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cocoaspotUITestsLaunchTests.m; sourceTree = "<group>"; };
+		BC8E2AEE2B4FDC1900B2053B /* libclibrespot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libclibrespot.a; path = /Users/sammoore/git/paradigmpost/clibrespot/target/release/libclibrespot.a; sourceTree = "<absolute>"; };
+		BC8E2AF02B4FE60200B2053B /* clibrespot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = clibrespot.h; sourceTree = "<group>"; };
+		BC8E2AF12B4FEA6F00B2053B /* libclibrespot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libclibrespot.a; sourceTree = "<group>"; };
+		BC8E2AF32B4FEB5800B2053B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		BC8E2AF52B4FEC7400B2053B /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC8E2AF62B4FEC7400B2053B /* AudioUnit.framework in Frameworks */,
+				BC8E2AF42B4FEB5800B2053B /* CoreAudio.framework in Frameworks */,
+				BC8E2AF22B4FEA6F00B2053B /* libclibrespot.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +94,7 @@
 				BC8E2AD32B4FBE7100B2053B /* cocoaspotTests */,
 				BC8E2ADD2B4FBE7100B2053B /* cocoaspotUITests */,
 				BC8E2ABF2B4FBE6F00B2053B /* Products */,
+				BC8E2AED2B4FDC1900B2053B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,10 +113,14 @@
 			children = (
 				BC8E2AC12B4FBE6F00B2053B /* AppDelegate.h */,
 				BC8E2AC22B4FBE6F00B2053B /* AppDelegate.m */,
+				BC6429512B5105750092E093 /* AppController.h */,
+				BC6429522B5105750092E093 /* AppController.m */,
 				BC8E2AC42B4FBE7000B2053B /* Assets.xcassets */,
 				BC8E2AC62B4FBE7000B2053B /* MainMenu.xib */,
 				BC8E2AC92B4FBE7000B2053B /* main.m */,
 				BC8E2ACB2B4FBE7000B2053B /* cocoaspot.entitlements */,
+				BC8E2AF12B4FEA6F00B2053B /* libclibrespot.a */,
+				BC8E2AF02B4FE60200B2053B /* clibrespot.h */,
 			);
 			path = cocoaspot;
 			sourceTree = "<group>";
@@ -121,6 +140,16 @@
 				BC8E2AE02B4FBE7100B2053B /* cocoaspotUITestsLaunchTests.m */,
 			);
 			path = cocoaspotUITests;
+			sourceTree = "<group>";
+		};
+		BC8E2AED2B4FDC1900B2053B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC8E2AF52B4FEC7400B2053B /* AudioUnit.framework */,
+				BC8E2AF32B4FEB5800B2053B /* CoreAudio.framework */,
+				BC8E2AEE2B4FDC1900B2053B /* libclibrespot.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC8E2ACA2B4FBE7000B2053B /* main.m in Sources */,
+				BC6429532B5105750092E093 /* AppController.m in Sources */,
 				BC8E2AC32B4FBE6F00B2053B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +449,7 @@
 		BC8E2AE52B4FBE7100B2053B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = x86_64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = cocoaspot/cocoaspot.entitlements;
@@ -433,6 +464,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/cocoaspot",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.paradigmpost.cocoaspot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,6 +479,7 @@
 		BC8E2AE62B4FBE7100B2053B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = x86_64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = cocoaspot/cocoaspot.entitlements;
@@ -457,6 +494,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/cocoaspot",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.paradigmpost.cocoaspot;
 				PRODUCT_NAME = "$(TARGET_NAME)";

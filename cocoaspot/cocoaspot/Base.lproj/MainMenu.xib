@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17150" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22155" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17150"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22155"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,10 +12,19 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="">
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="controller" destination="2i3-IY-jU0" id="ugV-VX-7AS"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="2i3-IY-jU0" customClass="AppController">
+            <connections>
+                <outlet property="password" destination="2Pm-1b-GmJ" id="Dja-u3-E3n"/>
+                <outlet property="toggleButton" destination="HMK-l7-feA" id="v1X-oG-Qt2"/>
+                <outlet property="trackId" destination="fFD-po-MBS" id="GvW-aV-xGc"/>
+                <outlet property="username" destination="PfL-9B-u1b" id="NrG-9k-TNt"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -683,16 +693,70 @@
         <window title="cocoaspot" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
+            <rect key="contentRect" x="335" y="390" width="480" height="186"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1800" height="1100"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="186"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField focusRingType="none" verticalHuggingPriority="750" contentType="email" translatesAutoresizingMaskIntoConstraints="NO" id="PfL-9B-u1b">
+                        <rect key="frame" x="20" y="145" width="440" height="21"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Email" drawsBackground="YES" id="mWv-X4-dGG">
+                            <font key="font" usesAppearanceFont="YES"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <accessibility description="Spotify Email"/>
+                    </textField>
+                    <textField focusRingType="none" verticalHuggingPriority="750" contentType="password" translatesAutoresizingMaskIntoConstraints="NO" id="2Pm-1b-GmJ" customClass="NSSecureTextField">
+                        <rect key="frame" x="20" y="114" width="440" height="21"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" id="WuM-gW-ULS">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <accessibility description="Spotify Password"/>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HMK-l7-feA">
+                        <rect key="frame" x="210" y="13" width="60" height="32"/>
+                        <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eHc-eW-FmH">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="play:" target="2i3-IY-jU0" id="RiB-OZ-JfW"/>
+                        </connections>
+                    </button>
+                    <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fFD-po-MBS">
+                        <rect key="frame" x="20" y="83" width="440" height="21"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Spotify Track ID" drawsBackground="YES" id="bAw-cI-3xW">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fFD-po-MBS" firstAttribute="top" secondItem="2Pm-1b-GmJ" secondAttribute="bottom" constant="10" symbolic="YES" id="04D-Ci-frE"/>
+                    <constraint firstItem="2Pm-1b-GmJ" firstAttribute="top" secondItem="PfL-9B-u1b" secondAttribute="bottom" constant="10" symbolic="YES" id="2Wd-bZ-cUW"/>
+                    <constraint firstAttribute="trailing" secondItem="PfL-9B-u1b" secondAttribute="trailing" constant="20" symbolic="YES" id="53G-53-qcG"/>
+                    <constraint firstItem="fFD-po-MBS" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="67L-fT-t2w"/>
+                    <constraint firstItem="PfL-9B-u1b" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="CJa-ev-XyN"/>
+                    <constraint firstItem="2Pm-1b-GmJ" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="D1i-hM-f9i"/>
+                    <constraint firstAttribute="bottom" secondItem="HMK-l7-feA" secondAttribute="bottom" constant="20" symbolic="YES" id="E9i-S3-oaw"/>
+                    <constraint firstItem="HMK-l7-feA" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="FZr-8t-uUg"/>
+                    <constraint firstItem="PfL-9B-u1b" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="HsH-nn-lOG"/>
+                    <constraint firstAttribute="trailing" secondItem="2Pm-1b-GmJ" secondAttribute="trailing" constant="20" symbolic="YES" id="SFT-c9-MCz"/>
+                    <constraint firstItem="PfL-9B-u1b" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="VWV-bs-iEl"/>
+                    <constraint firstItem="PfL-9B-u1b" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="icc-2F-620"/>
+                    <constraint firstAttribute="trailing" secondItem="PfL-9B-u1b" secondAttribute="trailing" constant="20" symbolic="YES" id="lJr-XE-FPs"/>
+                    <constraint firstAttribute="trailing" secondItem="fFD-po-MBS" secondAttribute="trailing" constant="20" symbolic="YES" id="tHv-yD-KPJ"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="Voe-Tx-rLC" id="top-28-M4D"/>
             </connections>
-            <point key="canvasLocation" x="200" y="400"/>
+            <point key="canvasLocation" x="200" y="313"/>
         </window>
     </objects>
 </document>
