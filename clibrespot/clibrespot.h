@@ -3,14 +3,19 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-typedef struct Instance Instance;
+typedef struct ViewModel ViewModel;
 
-Runtime *spot_init_runtime(void);
+struct ViewModel *spot_init_view_model(void);
 
-struct Instance *spot_init_player(Runtime *runtime, const char *user, const char *pass);
+void spot_login(struct ViewModel *view_model, const char *user, const char *pass);
 
-void spot_play(Runtime *runtime, struct Instance *instance, const char *track_id);
+void spot_play(struct ViewModel *view_model, const char *track_id);
 
-void spot_resume(struct Instance *instance);
+void spot_resume(struct ViewModel *view_model);
 
-void spot_pause(struct Instance *instance);
+void spot_pause(struct ViewModel *view_model);
+
+void spot_listen_for_events(struct ViewModel *view_model,
+                            void *context,
+                            void (*is_track_loaded_cb)(bool, void*),
+                            void (*is_playing_cb)(bool, void*));

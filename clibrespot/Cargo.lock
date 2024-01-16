@@ -311,6 +311,7 @@ name = "clibrespot"
 version = "0.1.0"
 dependencies = [
  "async-ffi",
+ "async-trait",
  "ffi_helpers",
  "librespot",
  "redux-rs",

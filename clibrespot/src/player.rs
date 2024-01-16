@@ -1,5 +1,3 @@
-use ffi_helpers::null_pointer_check;
-use tokio::runtime::Runtime;
 use librespot::{
     core::{
         authentication::Credentials,
@@ -15,14 +13,7 @@ use librespot::{
     },
 };
 
-pub struct Instance {
-    _player: Player,
-}
-
-// librespot play example
-pub fn create(runtime: *mut Runtime, user: &str, pass: &str) -> Option<Instance> {
-    null_pointer_check!(runtime);
-
+pub async fn create(user: &str, pass: &str) -> Option<Player> {
     let session_config = SessionConfig::default();
     let player_config = PlayerConfig::default();
     let audio_format = AudioFormat::default();
@@ -30,47 +21,26 @@ pub fn create(runtime: *mut Runtime, user: &str, pass: &str) -> Option<Instance>
     let backend = audio_backend::find(None).unwrap();
 
     println!("Connecting...");
-    let connect_result = unsafe { (*runtime).block_on(
-        Session::connect(session_config, credentials, None, false)
-    ) };
+    let connect_result = Session::connect(session_config, credentials, None, false).await;
 
     if let Err(e) = connect_result {
         println!("Error connecting: {}", e);
         return None;
     }
 
-    let (session, _) = connect_result.unwrap();
+    let (session, _) = connect_result.ok()?;
 
     let (player, _channel) = Player::new(player_config, session, Box::new(NoOpVolume), move || {
         backend(None, audio_format)
     });
 
-    return Some(Instance {
-        _player: player,
-    });
+    Some(player)
 }
 
-pub fn play_sync(runtime: *mut Runtime, instance: *mut Instance, track_id: &str) {
-    null_pointer_check!(runtime);
-    null_pointer_check!(instance);
-
-    let mut track = unsafe { SpotifyId::from_base62(track_id).unwrap_unchecked() };
+pub fn play(player: &mut Player, track_id: &str) {
+    let Ok(mut track) = SpotifyId::from_base62(track_id) else { return };
     track.audio_type = SpotifyAudioType::Track;
 
-    unsafe { (*instance)._player.load(track, true, 0) };
-
-    println!("Playing...");
-    unsafe { (*runtime).block_on((*instance)._player.await_end_of_track()) };
-}
-
-pub fn pause(instance: *mut Instance) {
-    null_pointer_check!(instance);
-
-    unsafe { (*instance)._player.pause() }
-}
-
-pub fn resume(instance: *mut Instance) {
-    null_pointer_check!(instance);
-
-    unsafe { (*instance)._player.play() }
+    player.load(track, true, 0);
+    player.play();
 }
